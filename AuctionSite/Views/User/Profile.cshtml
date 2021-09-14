@@ -1,0 +1,25 @@
+﻿@model UserProfileModel
+@using AuctionSite.Localize
+
+<h1>Профиль</h1>
+<form class="profile-form" action="/User/Profile" method="post">
+    <div class="profile-name" >
+       @Resource.Profile_input_Name @Html.TextBoxFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <div class="profile-Surname">
+        @Resource.Profile_input_Surname @Html.TextBoxFor(x => x.SurName)
+    </div>
+    <div class="profile-PhoneNumber">
+        @Resource.Profile_input_PhoneNumber @Html.TextBoxFor(x => x.PhoneNumber)
+    </div>
+    <div class="profile-FavoriteTypesOfLots">
+        @Resource.Profile_input_FavotiteTypeOfLot
+
+        @foreach (var item in @Model.AllTypesOfLots)
+        {
+            @Html.CheckBox(nameof(Model.FavoriteTypesOfLots), Model.AllTypesOfLots);
+        }
+    </div>
+    <input type="submit" value="Save" />
+</form>

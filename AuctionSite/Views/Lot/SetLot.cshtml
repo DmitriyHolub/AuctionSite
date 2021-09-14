@@ -1,0 +1,33 @@
+﻿@model SetLotModel
+@using AuctionSite.Localize
+
+@section Head{
+    <script src="/js/AddLotImage.js"></script>
+}
+
+<div class="set-lot-wrap">
+    <h1>@Resource.Lot_SetLot_Creating__a_new_lot</h1>
+    <form class="set-lot-form" action="/Lot/SetLot" method="post" enctype="multipart/form-data">
+        <div class="set-lot-form-LotName">
+            @Resource.Set_lot_Input_lot_name @Html.TextBoxFor(x => x.LotName)
+            @Html.ValidationMessageFor(x => x.LotName)
+        </div>
+        <div class="set-lot-form-ProductDescription">
+            @Resource.Set_lot_Input_lot_discription @Html.TextBoxFor(x => x.ProductDescription)
+            @Html.ValidationMessageFor(x => x.LotName)
+        </div>
+        <div class="set-lot-form-StartPrice">
+            @Resource.Set_lot_Input_start_price @Html.TextBoxFor(x => x.StartPrice)
+            @Html.ValidationMessageFor(x => x.StartPrice)
+        </div>
+        @Resource.Set_lot_Choose_type_of_lot
+        <div>
+            @Html.DropDownList(nameof(Model.LotType), Model.AllTypeOfLots);
+        </div>
+        <div class="new-image-for-lot">
+            <input class="input-image-lot" type="file" name="LotImages" value="LotImages" />
+        </div>
+        <input type="submit" value="@Resource.Common_Create" />
+    </form>
+</div>
+

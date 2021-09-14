@@ -1,0 +1,126 @@
+﻿@using AuctionSite.EfStaff.Repositories
+@inject TypeLotRepository _typeLotRepository
+@using AuctionSite.Localize
+@using AuctionSite.EfStaff.Enum
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/LanguageChoose.js"></script>
+    @RenderSection("Head", false)
+</head>
+<body>
+    <div class="header">
+        <div class="top-header">
+            <div class="logotip">
+                <img src="~/Images/logotip2.png" />
+                <p>Логотип</p>
+            </div>
+
+            <div class="right-heard-block">
+                <div class="search-block">
+                    <div class="search">
+                        <input type="search" name="search" />
+                    </div>
+                </div>
+                <div class="lang-log-block">
+                    <div class="language-header">
+                        <label>
+                            <input class="input-flag" type="radio" name="fb" value="1" />
+                            <img class="flag-image" src="~/Images/Британский.png">
+                        </label>
+                        <label>
+                            <input class="input-flag" type="radio" name="fb" value="2" />
+                            <img class="flag-image" src="~/Images/русский.png">
+                        </label>
+                    </div>
+                    <div class="registration-header">
+                        <div class="Login">
+                            @if (!User.Identity.IsAuthenticated) // Не работает
+                            {
+                                <a href="/user/Login"> @Resource.LayOut_Auth_Login </a>
+                                <a href="/user/Registration">@Resource.LayOut_Auth_Registration</a>
+                            }
+                            else
+                            {
+                                <a href="/user/Logout">@Resource.LayOut_Auth_Logout</a>
+                                <p class=" user-name"> @Resource.User @User.Identity.Name</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-menu">
+            <ul class="ul-horizontal-menu">
+                <li class="Li-horizont-menu">
+                    <a href="/Home/Index">   @Resource.LayOut_menu_Main</a>
+                </li>
+                <li class="Li-horizont-menu">
+                    <a href="/Lot/SetLot"> @Resource.LayOut_menu_Set_a_lot</a>
+                </li>
+                <li class="Li-horizont-menu">
+                    <a href=""> @Resource.LayOut_menu_Forum </a>
+                </li>
+                <li class="Li-horizont-menu">
+                    <a href="/Home/ActionRules"> @Resource.LayOut_menu_Auction_rules</a>
+                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="Li-horizont-menu">
+                        <a href="/User/UserPage">@Resource.LayOut_menu_Personal_account </a>
+                    </li>
+                }
+
+                @if (User.Identity.Name == "Admin")
+                {
+                    <li class="admin-layout-page">
+                        <a href="/User/AdminPage">@Resource.LayOut_menu_Admin_page </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+    </div>
+    <div class="main-block">
+        <div class="left-menu">
+            <ul class="left-menu-ul">
+                <li class="left-menu-li">
+                    <a href="/Lot/ShowLots?numberType=1">@Resource.LayOut_Types_Equipment</a> @*/ручками или*@
+                </li>
+                <li class="left-menu-li">
+                    <a href="/Lot/ShowLots?numberType=2">@Resource.LayOut_Types_Books</a>
+                </li>
+                <li class="left-menu-li">
+                    <a href="/Lot/ShowLots?numberType=3">@Resource.LayOut_Types_Vehicles</a>
+                </li>
+                <li class="left-menu-li">
+                    <a href="/Lot/ShowLots?numberType=4">@Resource.LayOut_Types_Antiques</a>
+                </li>
+                <li class="left-menu-li">
+                    <a href="/Lot/ShowLots?numberType=5">@Resource.LayOut_Types_Others</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+
+    </div>
+    <div class="footer-block">
+        <div class="subscribe">
+
+        </div>
+        <div class="footer">
+
+        </div>
+
+    </div>
+
+</body>
+</html>

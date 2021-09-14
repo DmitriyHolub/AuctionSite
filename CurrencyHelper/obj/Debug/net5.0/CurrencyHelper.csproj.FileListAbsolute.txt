@@ -1,0 +1,16 @@
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\CurrencyHelper.exe
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\CurrencyHelper.deps.json
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\CurrencyHelper.runtimeconfig.json
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\CurrencyHelper.runtimeconfig.dev.json
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\CurrencyHelper.dll
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\ref\CurrencyHelper.dll
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\bin\Debug\net5.0\CurrencyHelper.pdb
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.AssemblyInfo.cs
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.dll
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\ref\CurrencyHelper.dll
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.pdb
+C:\Users\HP\source\repos\AuctionSite\CurrencyHelper\obj\Debug\net5.0\CurrencyHelper.genruntimeconfig.cache

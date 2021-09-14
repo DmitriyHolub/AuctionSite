@@ -1,0 +1,19 @@
+﻿@model PlaceBetModel
+@using AuctionSite.Localize
+
+<div class="place-bet-wrap">
+
+    <form action="/Lot/PlaceBet" method="post">
+        @Resource.Currency_selection
+        @Html.DropDownList("Currency", @Model.Currencies)
+
+        @Html.HiddenFor(x => x.LotId)
+        <div class="input-new-price">
+            Установите новую ставку @Html.TextBoxFor(x => x.NewPrice) @Model.Currency
+            @Html.ValidationMessageFor(x => x.NewPrice)
+        </div>
+
+        <input type="submit" value="Поднять ставку" />
+    </form>
+
+</div>

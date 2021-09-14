@@ -1,0 +1,33 @@
+﻿@model RegistrationUserModel
+@using AuctionSite.Localize
+
+@section Head{ 
+<script src="~/js/ValidateLogin.js"> </script>
+}
+
+<div class="registration">
+    <h1> Регистрация нового пользователя</h1>
+    <form class="registration-form" action="/User/Registration" method="post">
+        <div>
+            @Html.ValidationMessageFor(x => x.Login)
+            @Resource.Registration_Input_Login @Html.TextBoxFor(x => x.Login) <span class="login-hint-good">хорошо</span><span class="login-hint-bad">Плохо</span>
+            @Html.ValidationMessageFor(x => x.Login)
+        </div>
+        <div>
+            @Resource.Registration_Input_password @Html.PasswordFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        <div>
+            @Resource.Registration_Confirm_password  @Html.PasswordFor(x => x.CheckPassword)
+            @Html.ValidationMessageFor(x => x.CheckPassword)
+        </div>
+        <div>
+            @Resource.Registration_Input_email @Html.TextBoxFor(x => x.Email)
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+        <input type="submit" value="Registration" />
+    </form>
+ 
+   
+
+</div>

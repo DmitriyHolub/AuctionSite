@@ -1,0 +1,278 @@
+﻿
+.main-block {
+    background-color: burlywood;
+    display: flex;
+}
+
+.left-menu {
+    border-right: solid 1px #ccc;
+    width: 200px;
+}
+
+.left-menu-li {
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+    font-family: fantasy;
+}
+
+    .left-menu-li a:hover {
+        font-size: large;
+    }
+
+    .left-menu-li a:active {
+
+    }
+
+.header {
+    background-color:antiquewhite;
+}
+
+.top-header {
+    display: flex;
+}
+
+.logotip {
+    justify-content: center;
+    align-content: center;
+    width: 200px;
+    height: 90px
+}
+.logotip img{
+    width: 120px;
+    height: auto;
+}
+
+.right-heard-block {
+    display: flex;
+    flex: 1;
+}
+
+.search {
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.search-block {
+    justify-content: center;
+    width: 450px;
+    align-items: center;
+    display: flex;
+}
+
+.language-header {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.ul-horizontal-menu {
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.horizontal-menu {
+    display: flex;
+    justify-content: space-around
+}
+
+.ul-horizontal-menu a {
+    padding: 10px;
+    margin: 0 5px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    font-family: fantasy;
+    text-align: center;
+}
+
+    .ul-horizontal-menu a:hover {
+        font-size: large;
+    }
+
+.ul-horizontal-menu li {
+    text-align: center;
+    float: left;
+    text-decoration: none;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.footer-block {
+    background-color: darkgoldenrod;
+}
+
+.lang-log-block {
+    display: grid;
+    flex: 1;
+    direction: rtl;
+}
+.login-block {
+    margin-left:50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-right: 150px;
+}
+.login-form {
+    display:flex;
+    flex-direction: column;
+}
+.flag-image{
+    width: 30px;
+    height:auto;
+}
+.registration{
+   display:flex;
+   align-content:center;
+   flex-direction:column;
+   justify-content: center;   
+   margin-left: 150px;
+   margin-top:10px;
+}
+.registration div{
+    margin:10px;
+}
+.input-flag {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.profile-form{
+    display:flex;
+    align-content:center;
+    flex-direction:column;
+    margin-left:150px;     
+}
+.profile-form input{
+    margin:10px;
+}
+.set-lot-form{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.set-lot-form a{
+    text-decoration: none;
+
+}
+.set-lot-form input{
+    margin: 5px;
+}
+.set-lot-wrap{
+    margin-left:150px;
+
+}
+.bottom-wrap {
+    display: flex;
+    justify-content: space-evenly;
+}
+.place-bet-block{
+    display:flex;
+}
+.top-wrap {
+    display: flex;
+}
+.left-block{
+    flex:1;
+}
+.right-block {
+    flex: 1;
+
+}
+.lot-block{
+    flex:1;
+    margin:10px;
+    border-radius:inherit;
+    border:solid 1px;
+}
+.lot-image{
+    width 100px;
+}
+.choose-image{
+    display:flex;
+    justify-content:space-between;
+}
+.right-block h1{
+    text-align:center;
+}
+.right-block pre {
+    overflow: scroll;
+}
+
+.price-block {
+    font-size: larger;
+}
+.left-menu-li{
+    text-decoration:none;
+}
+.finish-form{
+    margin: 50px;
+}
+.top-wrap{
+    display:flex;
+}
+.action-rules{
+    margin:150px;
+}
+.lot-image {
+    width: 250px;
+    height:250px;
+}
+.lot-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.lot-placebet{
+    border:solid 2px;
+    padding: 10px;
+    background-color:blanchedalmond
+}
+.lot-subscribe {
+    border: solid 2px;
+    padding: 10px;
+    background-color: blanchedalmond
+}
+.input-butto-login{
+    margin-top: 10px;
+    padding:7px;
+}
+.login-form span{
+  color: red;
+}
+.registration-form span {
+    color: red;
+}
+.price-block{
+    padding: 10px;
+    font-size:xx-large;  
+}
+.set-lot-form span{
+    color: red;
+}
+.currency-block{
+    padding: 7px;
+    margin-left:25px;
+}
+.input-new-price{
+    display:flex;
+}
+.lot-download {
+    border: solid 2px;
+    padding: 10px;
+    background-color: blanchedalmond
+}
+.lot-description{
+    border: solid 1px;
+}
+.number-page{
+    display:flex;
+}
+.user-page-menu-block{
+    display:flex;
+    justify-content:space-between
+}
+.user-page-menu{
+    padding: 15px;
+    border: solid 1px;
+}

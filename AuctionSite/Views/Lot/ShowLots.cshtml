@@ -1,0 +1,52 @@
+﻿@model ShowLotByTypeModel
+@using AuctionSite.Localize
+
+
+<form action="/Lot/ShowLots?numberType=@Model.numberType&currency=@Model.Currency " method="get" class="currency-block ">
+    @Html.HiddenFor(x => x.numberType)
+    @Resource.Currency_selection;
+    @Html.DropDownList("Currency", @Model.Currencies)
+    <input type="submit" value="выбор валюты" />
+</form>
+<div class="lot-wrap">
+
+    @foreach (var item in @Model.LotsModels)
+    {
+        <div class="lot-block">
+            <div class=" top-wrap">
+                <div class="left-block">
+                    @foreach (var img in @item.UrlImages)
+                    {
+                        <img class="lot-image" src=@img /> @*надо дорисовать кнопки оборота*@
+                    }
+                    <div class="choose-image">
+                    </div>
+                </div>
+                <div class="right-block">
+                    <div class="lot-name">
+                        <h1>@item.LotName</h1>
+                    </div>
+                    <div class="lot-description">
+                        <p>@item.ProductDescription</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" bottom-wrap">
+                <div style="color:red" class="price-block">
+                    @item.BuyoutPrice @Model.PreferCurrency.ToString()
+                </div>
+                <div class="place-bet-block">
+                    <div class="lot-placebet">
+                        <a href="/Lot/PlaceBet?lotId=@item.Id">@Resource.Lot_Show_Place_a_bet</a>
+                    </div>
+                    <div class="lot-subscribe">
+                        <a href="/Lot/Subscribe?lotId=@item.Id">@Resource.Item_subscribe</a>
+                    </div>
+                    <div class="lot-download">
+                        <a href="/Lot/DownLoadLot?lotId=@item.Id">@Resource.DownLoad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

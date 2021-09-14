@@ -1,0 +1,40 @@
+﻿@model AdminPageModel
+@using AuctionSite.Localize
+@section Head{ 
+<link rel="stylesheet" href="~/css/AdminPage.css" />}
+
+<div class="admin-page-wrap">
+   
+    <div class="lots-to-check">
+        @Model.CountOfLotToCheck
+    </div>
+    <div class="admin-page-lot-name">
+        @Model.LotToCheck.LotName
+    </div>
+    @foreach (var image in @Model.LotToCheck.UrlImages)
+    {
+        <div class="admin-page-images">
+            <img src="@image.Url" />
+        </div>
+    }
+    <div class="admin-page-text-description">
+        @Model.LotToCheck.ProductDescription
+    </div>
+    <div class="admin-page-lot-type">
+        @Model.LotToCheck.TypeOfLot.TypeOfLot
+    </div>
+    <div class="admin-page-lot-price">
+        @Model.LotToCheck.StartPrice
+    </div>
+    <div class="admin-page-lot-creator">
+        @Model.LotToCheck.UserCreator.Name
+    </div>
+    <form class="admin-page-form" action="/User/AdminPage" method="post">
+        @Html.HiddenFor(x => x.LotToCheck.Id);
+        @Html.CheckBox("CheckAdmin", false)<span>@Resource.Admin_page_verification_passed</span>
+
+        @Html.TextAreaFor(x => x.TextMistake);
+
+        <input type="submit" value="@Resource.Send" />
+    </form>
+</div>

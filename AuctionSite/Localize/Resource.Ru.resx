@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action_rules" xml:space="preserve">
+    <value>Здесь очень много правил .... Бла бла бла....</value>
+  </data>
+  <data name="Admin_page_verification_passed" xml:space="preserve">
+    <value>Проверка пройдена</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Currency_selection" xml:space="preserve">
+    <value>Выбор валюты</value>
+  </data>
+  <data name="DownLoad" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="Error_Login_Wrong_Login_or_Password" xml:space="preserve">
+    <value>Неправильный логин или пароль</value>
+  </data>
+  <data name="Input_Login_please" xml:space="preserve">
+    <value>Введите логин</value>
+  </data>
+  <data name="Input_password_please" xml:space="preserve">
+    <value>Введите пароль</value>
+  </data>
+  <data name="Item_subscribe" xml:space="preserve">
+    <value>Подписаться</value>
+  </data>
+  <data name="LayOut_Auth_Login" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="LayOut_Auth_Logout" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="LayOut_Auth_Registration" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="LayOut_menu_Admin_page" xml:space="preserve">
+    <value>Администратор</value>
+  </data>
+  <data name="LayOut_menu_Auction_rules" xml:space="preserve">
+    <value>Правила Аукциона</value>
+  </data>
+  <data name="LayOut_menu_Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="LayOut_menu_Main" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="LayOut_menu_Personal_account" xml:space="preserve">
+    <value>Личный кабинет</value>
+  </data>
+  <data name="LayOut_menu_Set_a_lot" xml:space="preserve">
+    <value>Выставить лот</value>
+  </data>
+  <data name="LayOut_Types_Antiques" xml:space="preserve">
+    <value>Антиквариат</value>
+  </data>
+  <data name="LayOut_Types_Books" xml:space="preserve">
+    <value>Книги</value>
+  </data>
+  <data name="LayOut_Types_Equipment" xml:space="preserve">
+    <value>Техника</value>
+  </data>
+  <data name="LayOut_Types_Others" xml:space="preserve">
+    <value>Прочее</value>
+  </data>
+  <data name="LayOut_Types_Vehicles" xml:space="preserve">
+    <value>Машины</value>
+  </data>
+  <data name="Logging" xml:space="preserve">
+    <value>Логирование</value>
+  </data>
+  <data name="Login_Registration" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="Lot_SetLot_Creating _a_new_lot" xml:space="preserve">
+    <value>Создание нового лота</value>
+  </data>
+  <data name="Lot_Show_Place_a_bet" xml:space="preserve">
+    <value>Сделать ставку</value>
+  </data>
+  <data name="Message_end_admin_check" xml:space="preserve">
+    <value>Больше лотов для проверки нету. Спасибо.</value>
+  </data>
+  <data name="Message_end_set_Lot" xml:space="preserve">
+    <value>Спасибо. Ваш лот отправлен на проверку.</value>
+  </data>
+  <data name="Place_bet_finish_phrase" xml:space="preserve">
+    <value>Вы подняли цену на лот</value>
+  </data>
+  <data name="Profile_input_FavotiteTypeOfLot" xml:space="preserve">
+    <value>Выберите свои любимые типы лотов</value>
+  </data>
+  <data name="Profile_input_Name" xml:space="preserve">
+    <value>Введите свое имя</value>
+  </data>
+  <data name="Profile_input_PhoneNumber" xml:space="preserve">
+    <value>Введите свой номер телефона</value>
+  </data>
+  <data name="Profile_input_Surname" xml:space="preserve">
+    <value>Введите свою фамилию</value>
+  </data>
+  <data name="Registration_Confirm_password" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+  <data name="Registration_Input_email" xml:space="preserve">
+    <value>Введите Email</value>
+  </data>
+  <data name="Registration_Input_Login" xml:space="preserve">
+    <value>Введите Логин</value>
+  </data>
+  <data name="Registration_Input_password" xml:space="preserve">
+    <value>Введите пароль</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="Set_lot_Choose_type_of_lot" xml:space="preserve">
+    <value>Выберите тип лота</value>
+  </data>
+  <data name="Set_lot_Input_lot_discription" xml:space="preserve">
+    <value>Введите описание лота</value>
+  </data>
+  <data name="Set_lot_Input_lot_name" xml:space="preserve">
+    <value>Введите имя лота</value>
+  </data>
+  <data name="Set_lot_Input_start_price" xml:space="preserve">
+    <value>Введите начальную цену</value>
+  </data>
+  <data name="Set_lot_Mistake_Input_Name" xml:space="preserve">
+    <value>Введите имя лота пожалуйста</value>
+  </data>
+  <data name="Subscribe_finish" xml:space="preserve">
+    <value>Спасибо. Вы подписаны на лот</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="User_Page_Active_lots" xml:space="preserve">
+    <value>Мои Лоты</value>
+  </data>
+  <data name="User_Page_Change_Profile" xml:space="preserve">
+    <value>Изменить профиль</value>
+  </data>
+  <data name="User_Page_History" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="User_Page_Rejected_Lots" xml:space="preserve">
+    <value>Отказаные Лоты</value>
+  </data>
+</root>

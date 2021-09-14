@@ -1,0 +1,23 @@
+﻿@model UserLoginModel
+@using AuctionSite.Localize
+
+<div class="login-block">
+    <h1>@Resource.Logging</h1>
+    <form class="login-form" action="/User/Login" method="post">
+        @Html.HiddenFor(x => x.ReturnUrl)
+        <div>
+            @Resource.Input_Login_please @Html.TextBoxFor(x => x.Login)
+            @Html.ValidationMessageFor(x => x.Login)
+        </div>
+        <div>
+            @Resource.Input_password_please @Html.TextBoxFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Login)
+        </div>
+
+        <input class="input-butto-login" type="submit" value="Login">
+    </form>
+
+    <div class"offer-registration">
+        <a href="/User/Registration">@Resource.Login_Registration</a>
+    </div>
+</div>
