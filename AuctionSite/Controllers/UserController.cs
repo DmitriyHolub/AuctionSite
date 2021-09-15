@@ -12,14 +12,15 @@ using AuctionSite.Localize;
 using AutoMapper;
 using AuctionSite.Services;
 using AuctionSite.Controllers.Attributes.AuthAttribute;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.Controllers
 {
     public class UserController : Controller
     {
-        private UserRepository _userRepository { get; set; }
-        private TypeLotRepository _typeLotRepository { get; set; }
-        private LotRepository _lotRepository { get; set; }
+        private IUserRepository _userRepository { get; set; }
+        private ITypeLotRepository _typeLotRepository { get; set; }
+        private ILotRepository _lotRepository { get; set; }
         private IMapper _mapper { get; set; }
         private UserService _userService { get; set; }
         private EmailService _emailService { get; set; }

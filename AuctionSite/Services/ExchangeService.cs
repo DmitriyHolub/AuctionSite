@@ -23,7 +23,7 @@ namespace AuctionSite.Services
         {
             if (currency == CurrencyEnum.RUB)
             {
-                return Math.Round(price * allExchangedRates.First(x => x.TypeCurrency == currency).Rate, 2);
+                return Math.Round(price * allExchangedRates.First(x => x.TypeCurrency == currency).Rate, 2); // yt ghfdbkmyj
             }
 
             return Math.Round(price / allExchangedRates.First(x => x.TypeCurrency == currency).Rate, 2);

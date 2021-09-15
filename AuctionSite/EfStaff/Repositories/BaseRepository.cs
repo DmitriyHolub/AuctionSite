@@ -1,4 +1,5 @@
 ﻿using AuctionSite.EfStaff.Models;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.EfStaff.Repositories
 {
-    public class BaseRepository<Model> where Model: BaseModel
+    public class BaseRepository<Model> : IBaseRepository<Model> where Model : BaseModel
     {
         private AuctionSiteDbContext _auctionSiteDbContext { get; set; }
         private protected DbSet<Model> _dbSet { get; set; }

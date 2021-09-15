@@ -14,20 +14,21 @@ using System.Threading.Tasks;
 using AuctionSite.Localize;
 using AuctionSite.Controllers.Attributes;
 using System.Drawing;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.Controllers
 {
     public class LotController : Controller
     {
         private UserService _userService { get; set; }
-        private LotRepository _lotRepository { get; set; }
-        private TypeLotRepository _typeLotRepository { get; set; }
+        private ILotRepository _lotRepository { get; set; }
+        private ITypeLotRepository _typeLotRepository { get; set; }
         private IMapper _mapper { get; set; }
         private FileService _fileService { get; set; }
-        private LotImageRepository _lotImageRepository { get; set; }
+        private ILotImageRepository _lotImageRepository { get; set; }
         private EmailService _emailService { get; set; }
         private LotService _lotService { get; set; }
-        private UserRepository _userRepository { get; set; }
+        private IUserRepository _userRepository { get; set; }
         private ExchangeService _exchangeService { get; set; }
         private IReportService _reportService { get; set; }
 

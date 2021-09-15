@@ -6568,11 +6568,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AuctionSite\\TimerHelper\\TimerHelper.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\TimerHelper\\TimerHelper.csproj",
       "projectName": "TimerHelper",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\TimerHelper\\TimerHelper.csproj",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\TimerHelper\\TimerHelper.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\TimerHelper\\obj\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\TimerHelper\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6589,8 +6589,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\AuctionSite.csproj": {
-              "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\AuctionSite.csproj"
+            "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\AuctionSite.csproj": {
+              "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\AuctionSite.csproj"
             }
           }
         }

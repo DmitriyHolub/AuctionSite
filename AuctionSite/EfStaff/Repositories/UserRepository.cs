@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.EfStaff.Repositories
 {
-    public class UserRepository : BaseRepository<User>
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
         public UserRepository(AuctionSiteDbContext DbContext) 
             : base(DbContext)

@@ -20,6 +20,7 @@ using AuctionSite.EfStaff.Models;
 using AutoMapper;
 using DinkToPdf.Contracts;
 using DinkToPdf;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite
 {
@@ -51,6 +52,7 @@ namespace AuctionSite
 
             services.AddControllersWithViews();
 
+            registerOldRepositories(services);
             registerRepositories(services);
             registerMapper(services);
 
@@ -60,14 +62,11 @@ namespace AuctionSite
             services.RegisterServices<LotService>();
             services.RegisterServices<ExchangeService>();
             services.RegisterServices<ReportService>();
-            
-
-
             services.RegisterServices<FileService>();// &&&&&&&&&
 
             services.AddHttpContextAccessor();
         }
-        private void registerRepositories(IServiceCollection services)
+        private void registerOldRepositories(IServiceCollection services)
         {
             var assembly = Assembly.GetAssembly(typeof(BaseRepository<>));
 
@@ -76,6 +75,21 @@ namespace AuctionSite
                     x.IsClass
                     && x.BaseType.IsGenericType
                     && x.BaseType.GetGenericTypeDefinition() == typeof(BaseRepository<>));
+
+            foreach (var repositoryType in repositories)
+            {
+                services.NiceRegister(repositoryType);
+            }
+        }
+        private void registerRepositories(IServiceCollection services)
+        {
+            var assembly = Assembly.GetAssembly(typeof(IBaseRepository<>));
+
+            var repositories = assembly.GetTypes()
+                .Where(x =>
+                    x.IsInterface && x.GetInterfaces().
+                    Any(x => x.IsGenericType
+                    && x.GetGenericTypeDefinition() == typeof(IBaseRepository<>)));
 
             foreach (var repositoryType in repositories)
             {

@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.EfStaff.Repositories
 {
-    public class LotImageRepository : BaseRepository<LotImage>
+    public class LotImageRepository : BaseRepository<LotImage>, ILotImageRepository
     {
         public LotImageRepository(AuctionSiteDbContext auctionSiteDbContext)
             : base(auctionSiteDbContext)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i6v/4XzNxIroCpoZWiU0Dc2PZ6bh76+ExF/6zD8cTe1saBQYXaLFyo6WN5OoqrZU4bGfymSeLEzBM+3qUN62yA==",
+  "dgSpecHash": "a4krLJcxK4RF+ybdCeR97b/Los/dE5BiVBbrJ6TkZK7Rc/dDIuHifvjgOGsbuqBLzC4L1GrgBeggHfozK16/2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSiteTest\\AuctionSiteTest.csproj",
+  "projectFilePath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSiteTest\\AuctionSiteTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",

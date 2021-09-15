@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.EfStaff.Repositories
 {
-    public class TypeLotRepository : BaseRepository<TypeLot>
+    public class TypeLotRepository : BaseRepository<TypeLot>, ITypeLotRepository
     {
         public TypeLotRepository(AuctionSiteDbContext auctionSiteDbContext) : base(auctionSiteDbContext)
         {

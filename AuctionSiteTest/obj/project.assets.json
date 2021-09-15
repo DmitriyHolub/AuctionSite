@@ -7504,11 +7504,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSiteTest\\AuctionSiteTest.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSiteTest\\AuctionSiteTest.csproj",
       "projectName": "AuctionSiteTest",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSiteTest\\AuctionSiteTest.csproj",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSiteTest\\AuctionSiteTest.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSiteTest\\obj\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSiteTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7525,8 +7525,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\AuctionSite.csproj": {
-              "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\AuctionSite.csproj"
+            "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\AuctionSite.csproj": {
+              "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\AuctionSite.csproj"
             }
           }
         }

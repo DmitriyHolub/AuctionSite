@@ -10,30 +10,25 @@ using AuctionSite.EfStaff.Enum;
 using System.Globalization;
 using AuctionSite.Services;
 using AutoMapper;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.Controllers
 {
     public class HomeController : Controller
     {
-        private TypeLotRepository _typeLotRepository { get; set; }
-        private LotRepository _lotRepository { get; set; }
+        private ILotRepository _lotRepository { get; set; }
         private UserService _userService { get; set; }
         private ExchangeService _exchangeService { get; set; }
-        private LotService _lotService { get; set; }
         private IMapper _mapper { get; set; }
 
-        public HomeController(TypeLotRepository typeLotRepository,
-            LotRepository lotRepository,
+        public HomeController( LotRepository lotRepository,
             UserService userService,
             IMapper mapper,
-            LotService lotService,
             ExchangeService exchangeService)
         {
-            _typeLotRepository = typeLotRepository;
             _lotRepository = lotRepository;
             _userService = userService;
             _mapper = mapper;
-            _lotService = lotService;
             _exchangeService = exchangeService;
         }
 
