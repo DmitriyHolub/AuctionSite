@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u6jVGdJaKOS2z+XSCR6CSTTU2KDygJDdPJoFWCiHcFRDLnJIkwpT7VLTHb48SoSeToOlUvJsMdkRHzlDxWu2Lg==",
+  "dgSpecHash": "flgRMvvmIam++NihF0pn9uuQ42tOsUfszhHYfI4oQfNiZPOk2yQFdEOknbAG68k3ddPvacqo+efjsX4At8pacg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\TimerHelper\\TimerHelper.csproj",
+  "projectFilePath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\TimerHelper\\TimerHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",

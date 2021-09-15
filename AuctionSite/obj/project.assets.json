@@ -6641,11 +6641,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\AuctionSite.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\AuctionSite.csproj",
       "projectName": "AuctionSite",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\AuctionSite.csproj",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\AuctionSite.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\AuctionSite\\AuctionSite\\obj\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\AuctionSite2\\AuctionSite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
