@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using AuctionSite.Services.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services
 {
-    public class FileService
+    public class FileService: IFileService
     {
         private IWebHostEnvironment _webHostEnvironment { get; set; }
 
@@ -18,7 +19,7 @@ namespace AuctionSite.Services
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public string GeyPathForImage()
+        public string GetPathForImage()
         {
             return Path.Combine(GetfolderPath(), "LotImages");
         }

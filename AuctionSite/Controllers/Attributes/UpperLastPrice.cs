@@ -3,9 +3,12 @@ using AuctionSite.Services;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Reflection;
+using AuctionSite.Models;
 
 namespace AuctionSite.Controllers.Attributes
 {
@@ -15,13 +18,16 @@ namespace AuctionSite.Controllers.Attributes
         {
             var _lotRepository = validationContext.GetService(typeof(LotRepository)) as LotRepository;
 
-            
+            var lotId = (validationContext.ObjectInstance as PlaceBetModel).LotId;
 
-            //if (!_lotRepository.IsNameExist(value.ToString()))
-            //{
-            //    return ValidationResult.Success;
-            //}
-            return new ValidationResult("This namealready exist");
+            var lotPrice = _lotRepository.GetById(lotId).BuyoutPrice;
+
+            if(lotPrice < (double)value)
+            {
+                return ValidationResult.Success;
+            }
+
+            return new ValidationResult("New price must be upper than last price");
         }
     }
 }

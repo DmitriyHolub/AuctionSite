@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AuctionSite.EfStaff.Enum;
+using AuctionSite.Services.Interfaces;
+
 namespace AuctionSite.Services
 {
-    public class LotService
+    public class LotService: ILotService
     {
         private LotRepository _lotRepository { get; set; }
         private EmailService _emailService { get; set; }

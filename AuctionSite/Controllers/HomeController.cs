@@ -11,14 +11,15 @@ using System.Globalization;
 using AuctionSite.Services;
 using AutoMapper;
 using AuctionSite.EfStaff.Repositories.Interfaces;
+using AuctionSite.Services.Interfaces;
 
 namespace AuctionSite.Controllers
 {
     public class HomeController : Controller
     {
         private ILotRepository _lotRepository { get; set; }
-        private UserService _userService { get; set; }
-        private ExchangeService _exchangeService { get; set; }
+        private IUserService _userService { get; set; }
+        private IExchangeService _exchangeService { get; set; }
         private IMapper _mapper { get; set; }
 
         public HomeController( LotRepository lotRepository,

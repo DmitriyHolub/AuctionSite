@@ -1,5 +1,6 @@
 ﻿using AuctionSite.EfStaff.Models;
 using AuctionSite.EfStaff.Repositories;
+using AuctionSite.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private UserRepository _userRepository { get; set; }
         private IHttpContextAccessor _httpContextAccessor { get; set; }

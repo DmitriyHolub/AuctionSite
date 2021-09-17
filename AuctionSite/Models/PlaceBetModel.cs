@@ -1,4 +1,5 @@
-﻿using AuctionSite.EfStaff.Enum;
+﻿using AuctionSite.Controllers.Attributes;
+using AuctionSite.EfStaff.Enum;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,10 @@ namespace AuctionSite.Models
 {
     public class PlaceBetModel
     {
+        [Display(Name ="lotId")]
         public long LotId { get; set; }
         [Required]
-        //[UpperLastPrice]
+        [UpperLastPrice]
         public double NewPrice { get; set; }
         public CurrencyEnum Currency { get; set; }
 

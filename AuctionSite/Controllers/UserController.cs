@@ -13,6 +13,7 @@ using AutoMapper;
 using AuctionSite.Services;
 using AuctionSite.Controllers.Attributes.AuthAttribute;
 using AuctionSite.EfStaff.Repositories.Interfaces;
+using AuctionSite.Services.Interfaces;
 
 namespace AuctionSite.Controllers
 {
@@ -22,8 +23,8 @@ namespace AuctionSite.Controllers
         private ITypeLotRepository _typeLotRepository { get; set; }
         private ILotRepository _lotRepository { get; set; }
         private IMapper _mapper { get; set; }
-        private UserService _userService { get; set; }
-        private EmailService _emailService { get; set; }
+        private IUserService _userService { get; set; }
+        private IEmailService _emailService { get; set; }
 
         public UserController(UserRepository userRepository,
             TypeLotRepository typeLotRepository,

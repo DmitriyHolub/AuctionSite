@@ -21,6 +21,8 @@ using AutoMapper;
 using DinkToPdf.Contracts;
 using DinkToPdf;
 using AuctionSite.EfStaff.Repositories.Interfaces;
+using AuctionSite.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 
 namespace AuctionSite
 {
@@ -52,21 +54,44 @@ namespace AuctionSite
 
             services.AddControllersWithViews();
 
-            registerOldRepositories(services);
             registerRepositories(services);
+            registerIRepositories(services);
+            registerServices(services);
+            registerIServices(services);
             registerMapper(services);
 
-            services.RegisterServices<UserService>();
+            //services.RegisterServices<UserService>();
+            //services.RegisterServices<EmailService>();
+            //services.RegisterServices<LotService>();
+            //services.RegisterServices<ExchangeService>();
+            //services.RegisterServices<ReportService>();
+            //services.RegisterServices<FileService>();
 
-            services.RegisterServices<EmailService>();
-            services.RegisterServices<LotService>();
-            services.RegisterServices<ExchangeService>();
-            services.RegisterServices<ReportService>();
-            services.RegisterServices<FileService>();// &&&&&&&&&
+            //services.AddScoped<IUserService>(x => new UserService(
+            //    x.GetService<UserRepository>(),
+            //    x.GetService<IHttpContextAccessor>()));
+            //services.AddScoped<IEmailService>(x => new EmailService());
+            //services.AddScoped<ILotService>(x => new LotService(
+            //    x.GetService<LotRepository>(),
+            //    x.GetService<EmailService>()));
+            //services.AddScoped<IExchangeService>(x => new ExchangeService(
+            //x.GetService<ExchangeRateRepository>()));
+            //services.AddScoped<IReportService>(x => new ReportService(
+            //     x.GetService<IConverter>(),
+            //    x.GetService<IWebHostEnvironment>()));
+            //services.AddScoped<IFileService>(x => new FileService(
+            // x.GetService<IWebHostEnvironment>()));
+
+
+            //services.AddScoped<IUserRepository>(x => new UserRepository(x.GetService<AuctionSiteDbContext>()));
+            //services.AddScoped<ITypeLotRepository>(x => new TypeLotRepository(x.GetService<AuctionSiteDbContext>()));
+            //services.AddScoped<IExchangeRateRepository>(x => new ExchangeRateRepository(x.GetService<AuctionSiteDbContext>()));
+            //services.AddScoped<ILotImageRepository>(x => new LotImageRepository(x.GetService<AuctionSiteDbContext>()));
+            //services.AddScoped<ILotRepository>(x => new LotRepository(x.GetService<AuctionSiteDbContext>()));
 
             services.AddHttpContextAccessor();
         }
-        private void registerOldRepositories(IServiceCollection services)
+        private void registerRepositories(IServiceCollection services)
         {
             var assembly = Assembly.GetAssembly(typeof(BaseRepository<>));
 
@@ -81,10 +106,32 @@ namespace AuctionSite
                 services.NiceRegister(repositoryType);
             }
         }
-        private void registerRepositories(IServiceCollection services)
+        public void registerServices(IServiceCollection services)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var types = assembly.GetTypes();
+            var allNeededservices = types.Where(x => x.ToString().Contains("Service") && x.IsClass);
+            foreach (var service in allNeededservices)
+            {
+                services.NiceRegister(service);
+            }
+        }
+        public void registerIServices(IServiceCollection services)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var types = assembly.GetTypes();
+            var iServices = types.Where(x => x.ToString().Contains("Service") && x.IsInterface);
+            foreach (var iService in iServices)
+            {
+                var neededClass = types.Single(x => x.GetInterfaces().Contains(iService));
+                services.AddScoped(neededClass, serviceProvider => services.Register(serviceProvider, neededClass));
+            }
+
+        }
+        private void registerIRepositories(IServiceCollection services)
         {
             var assembly = Assembly.GetAssembly(typeof(IBaseRepository<>));
-
+            var a = assembly.GetTypes();
             var repositories = assembly.GetTypes()
                 .Where(x =>
                     x.IsInterface && x.GetInterfaces().
@@ -93,7 +140,9 @@ namespace AuctionSite
 
             foreach (var repositoryType in repositories)
             {
-                services.NiceRegister(repositoryType);
+                var neededClass = a.Single(x => x.GetInterfaces().Contains(repositoryType));
+                services.NiceRegister(neededClass);
+                services.AddScoped(repositoryType, serviceProvider => services.Register(serviceProvider, neededClass));
             }
         }
 

@@ -15,19 +15,20 @@ using AuctionSite.Localize;
 using AuctionSite.Controllers.Attributes;
 using System.Drawing;
 using AuctionSite.EfStaff.Repositories.Interfaces;
+using AuctionSite.Services.Interfaces;
 
 namespace AuctionSite.Controllers
 {
     public class LotController : Controller
     {
-        private UserService _userService { get; set; }
+        private IUserService _userService { get; set; }
         private ILotRepository _lotRepository { get; set; }
         private ITypeLotRepository _typeLotRepository { get; set; }
         private IMapper _mapper { get; set; }
-        private FileService _fileService { get; set; }
+        private IFileService _fileService { get; set; }
         private ILotImageRepository _lotImageRepository { get; set; }
-        private EmailService _emailService { get; set; }
-        private LotService _lotService { get; set; }
+        private IEmailService _emailService { get; set; }
+        private ILotService _lotService { get; set; }
         private IUserRepository _userRepository { get; set; }
         private ExchangeService _exchangeService { get; set; }
         private IReportService _reportService { get; set; }
@@ -87,7 +88,7 @@ namespace AuctionSite.Controllers
 
                 _lotImageRepository.Save(newlotImage);
 
-                var fullPath = Path.Combine(_fileService.GeyPathForImage(), $"{newlotImage.Id}.jpg");
+                var fullPath = Path.Combine(_fileService.GetPathForImage(), $"{newlotImage.Id}.jpg");
 
                 using (var stream = new FileStream(fullPath, FileMode.OpenOrCreate))
                 {

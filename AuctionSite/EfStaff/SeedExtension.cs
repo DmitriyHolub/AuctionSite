@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AuctionSite.EfStaff.Repositories;
 using AuctionSite.EfStaff.Enum;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.EfStaff
 {
@@ -45,13 +46,14 @@ namespace AuctionSite.EfStaff
                 InitImages(services.ServiceProvider);
                 InitLot(services.ServiceProvider);
                 InitExchangeRates(services.ServiceProvider);
+                
             }
             return host;
         }
 
         private static void InitExchangeRates(IServiceProvider service)
         {
-            var _exchangeRateRepository = service.GetService<ExchangeRateRepository>();
+            var _exchangeRateRepository = service.GetService<IExchangeRateRepository>();
 
             var rates = new List<string>() { RateUSD, RateEUR, RateRUB, RateBYN };
 
@@ -81,8 +83,8 @@ namespace AuctionSite.EfStaff
 
         public static void InitUser(IServiceProvider service)
         {
-            var _userRepository = service.GetService<UserRepository>();
-            var _typeLotRepository = service.GetService<TypeLotRepository>();
+            var _userRepository = service.GetService<IUserRepository>();
+            var _typeLotRepository = service.GetService<ITypeLotRepository>();
 
             var userInfo = new Dictionary<string, User>()
             {
@@ -130,7 +132,7 @@ namespace AuctionSite.EfStaff
         }
         public static void initTypeOFLot(IServiceProvider service)
         {
-            var _typeLotRepository = service.GetService<TypeLotRepository>();
+            var _typeLotRepository = service.GetService<ITypeLotRepository>();
 
             var typeInfo = new List<string>() { TypeOfLot1, TypeOfLot2, TypeOfLot3, TypeOfLot4, TypeOfLot5 };
 
@@ -155,7 +157,7 @@ namespace AuctionSite.EfStaff
         }
         public static void InitImages(IServiceProvider service)
         {
-            var _lotImageRepositoty = service.GetService<LotImageRepository>();
+            var _lotImageRepositoty = service.GetService<ILotImageRepository>();
 
             var allLotImages = _lotImageRepositoty.GetAll();
 
@@ -174,10 +176,10 @@ namespace AuctionSite.EfStaff
 
         public static void InitLot(IServiceProvider service)
         {
-            var _userRepository = service.GetService<UserRepository>();
-            var _lotRepository = service.GetService<LotRepository>();
-            var _lotImageRepository = service.GetService<LotImageRepository>();
-            var _typeLotRepository = service.GetService<TypeLotRepository>();
+            var _userRepository = service.GetService<IUserRepository>();
+            var _lotRepository = service.GetService<ILotRepository>();
+            var _lotImageRepository = service.GetService<ILotImageRepository>();
+            var _typeLotRepository = service.GetService<ITypeLotRepository>();
 
             var OskarImagesUrl = new List<string>() { Image1, Image2, Image3 };
             var SamokatImagesUrl = new List<string>() { Image4, Image5 };
