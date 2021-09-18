@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services.Interfaces
 {
-    interface IExchangeService
+    public interface IExchangeService
     {
         public double GetCurrentPrice(double price, CurrencyEnum currency);
 

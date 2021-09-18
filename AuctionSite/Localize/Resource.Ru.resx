@@ -138,6 +138,9 @@
   <data name="Input_Login_please" xml:space="preserve">
     <value>Введите логин</value>
   </data>
+  <data name="Input_new_price_ for_lot" xml:space="preserve">
+    <value>Введите свою цену на лот</value>
+  </data>
   <data name="Input_password_please" xml:space="preserve">
     <value>Введите пароль</value>
   </data>

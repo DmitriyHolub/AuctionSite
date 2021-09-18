@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services.Interfaces
 {
-    interface ILotService
+    public interface ILotService
     {
         public void CheckFinishBidding();
         public void SendEmailToObserves(long id);

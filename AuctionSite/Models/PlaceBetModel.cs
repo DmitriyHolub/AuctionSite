@@ -13,6 +13,7 @@ namespace AuctionSite.Models
     {
         [Display(Name ="lotId")]
         public long LotId { get; set; }
+        public string LotName { get; set; }
         [Required]
         [UpperLastPrice]
         public double NewPrice { get; set; }

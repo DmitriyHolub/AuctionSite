@@ -124,6 +124,15 @@ namespace AuctionSite.Localize {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input new price  for lot.
+        /// </summary>
+        public static string Input_new_price__for_lot {
+            get {
+                return ResourceManager.GetString("Input_new_price_ for_lot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input password please.
         /// </summary>
         public static string Input_password_please {

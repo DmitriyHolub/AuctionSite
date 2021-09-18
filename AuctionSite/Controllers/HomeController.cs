@@ -22,10 +22,10 @@ namespace AuctionSite.Controllers
         private IExchangeService _exchangeService { get; set; }
         private IMapper _mapper { get; set; }
 
-        public HomeController( LotRepository lotRepository,
-            UserService userService,
+        public HomeController( ILotRepository lotRepository,
+            IUserService userService,
             IMapper mapper,
-            ExchangeService exchangeService)
+            IExchangeService exchangeService)
         {
             _lotRepository = lotRepository;
             _userService = userService;

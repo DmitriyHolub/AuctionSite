@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.EfStaff.Repositories.Interfaces
 {
-    interface ITypeLotRepository:IBaseRepository<TypeLot>
+    public interface ITypeLotRepository:IBaseRepository<TypeLot>
     {
         public bool Exist(LotTypeEnum type);
 

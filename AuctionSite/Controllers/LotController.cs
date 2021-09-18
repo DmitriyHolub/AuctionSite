@@ -30,20 +30,20 @@ namespace AuctionSite.Controllers
         private IEmailService _emailService { get; set; }
         private ILotService _lotService { get; set; }
         private IUserRepository _userRepository { get; set; }
-        private ExchangeService _exchangeService { get; set; }
+        private IExchangeService _exchangeService { get; set; }
         private IReportService _reportService { get; set; }
 
-        public LotController(UserService userService,
-            LotRepository lotRepository,
-            TypeLotRepository typeLot,
+        public LotController(IUserService userService,
+            ILotRepository lotRepository,
+            ITypeLotRepository typeLot,
             IMapper mapper,
-             FileService fileService,
-             LotImageRepository lotImageRepository,
-             EmailService emailService,
-             LotService lotService,
-             UserRepository userRepository,
-             ExchangeService exchangeService,
-             ReportService reportService)
+             IFileService fileService,
+             ILotImageRepository lotImageRepository,
+             IEmailService emailService,
+             ILotService lotService,
+             IUserRepository userRepository,
+             IExchangeService exchangeService,
+             IReportService reportService)
         {
             _userService = userService;
             _lotRepository = lotRepository;
@@ -184,7 +184,7 @@ namespace AuctionSite.Controllers
         [OnlyUser]
         public IActionResult PlaceBet(long lotId)
         {
-            if (!User.Identity.IsAuthenticated) //Вопрос ReturnUrl@@@@@@@@@@@@@@@@@@@
+            if (!User.Identity.IsAuthenticated) 
             {
                 return RedirectToAction("Registration", "User");
             }
@@ -263,6 +263,10 @@ namespace AuctionSite.Controllers
 
             return File(pdfFile,
            "application/octet-stream", "LotPdf.pdf");
+        }
+        public void ChangeImage()
+        {
+            
         }
     }
 }

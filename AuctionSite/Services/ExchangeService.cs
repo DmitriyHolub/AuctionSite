@@ -1,6 +1,7 @@
 ﻿using AuctionSite.EfStaff.Enum;
 using AuctionSite.EfStaff.Models;
 using AuctionSite.EfStaff.Repositories;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 using AuctionSite.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,10 @@ namespace AuctionSite.Services
 {
     public class ExchangeService: IExchangeService
     {
-        private ExchangeRateRepository _exchangeRateRepository { get; set; }
+        private IExchangeRateRepository _exchangeRateRepository { get; set; }
         private List<ExchangeRate> allExchangedRates { get; set; }
 
-        public ExchangeService(ExchangeRateRepository exchangeRateRepository)
+        public ExchangeService(IExchangeRateRepository exchangeRateRepository)
         {
             _exchangeRateRepository = exchangeRateRepository;
             allExchangedRates = _exchangeRateRepository.GetAll();

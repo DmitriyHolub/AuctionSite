@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.EfStaff.Repositories.Interfaces
 {
-    interface IUserRepository: IBaseRepository<User>
+    public interface IUserRepository: IBaseRepository<User>
     {
         public bool Exist(string login);
 

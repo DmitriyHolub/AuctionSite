@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services.Interfaces
 {
-    interface IFileService
+    public interface IFileService
     {
         public string GetPathForImage();
 

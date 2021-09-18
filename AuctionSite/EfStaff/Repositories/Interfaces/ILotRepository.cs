@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.EfStaff.Repositories.Interfaces
 {
-    interface ILotRepository: IBaseRepository<Lot>
+    public interface ILotRepository: IBaseRepository<Lot>
     {
         public List<Lot> GetActiveLots(int numberPage);
 

@@ -4,6 +4,7 @@
 <div class="place-bet-wrap">
 
     <form action="/Lot/PlaceBet" method="post">
+        <h1>@Resource.Input_new_price__for_lot @Model.LotName</h1> 
         @Resource.Currency_selection
         @Html.DropDownList("Currency", @Model.Currencies)
 

@@ -26,12 +26,12 @@ namespace AuctionSite.Controllers
         private IUserService _userService { get; set; }
         private IEmailService _emailService { get; set; }
 
-        public UserController(UserRepository userRepository,
-            TypeLotRepository typeLotRepository,
-            LotRepository lotRepository,
+        public UserController(IUserRepository userRepository,
+            ITypeLotRepository typeLotRepository,
+            ILotRepository lotRepository,
             IMapper mapper,
-            UserService userService,
-            EmailService emailService)
+            IUserService userService,
+            IEmailService emailService)
         {
             _userRepository = userRepository;
             _typeLotRepository = typeLotRepository;
@@ -70,7 +70,7 @@ namespace AuctionSite.Controllers
             {
                 ModelState.AddModelError(nameof(UserLoginModel.Login),
                     "Wrong Login or password");
-                return View();
+                return View(userLogin);
             }
 
             var claims = new List<Claim>();
@@ -87,7 +87,7 @@ namespace AuctionSite.Controllers
 
             if (string.IsNullOrEmpty(userLogin.ReturnUrl))
             {
-                return View();
+                return RedirectToAction("Index","Home");
             }
             return Redirect(userLogin.ReturnUrl);
         }

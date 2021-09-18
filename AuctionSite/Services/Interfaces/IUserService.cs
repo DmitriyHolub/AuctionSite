@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services.Interfaces
 {
-    interface IUserService
+    public interface IUserService
     {
         public User GetCurrentUser();
 

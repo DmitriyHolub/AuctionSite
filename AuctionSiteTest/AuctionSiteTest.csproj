@@ -15,8 +15,4 @@
     <ProjectReference Include="..\AuctionSite\AuctionSite.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\UserController\" />
-  </ItemGroup>
-
 </Project>

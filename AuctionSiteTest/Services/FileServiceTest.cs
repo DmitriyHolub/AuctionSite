@@ -23,7 +23,7 @@ namespace AuctionSiteTest.Services
    
         [Test]
         [TestCase(5)]
-        public void GetImageUrlTest(long Id)
+        public void GetImageUrl_Test(long Id)
         {
             //Preparing  
             //Act 
@@ -33,7 +33,7 @@ namespace AuctionSiteTest.Services
 
         }
         [Test]
-        public void GetPathForImageTest() // Правильность названий????
+        public void GetPathForImage_Test() // Правильность названий????
         {
             //Preparing  
             _webHostEnvironment.Setup(x => x.WebRootPath).Returns("Path");
@@ -42,7 +42,7 @@ namespace AuctionSiteTest.Services
             //Assert
             Assert.AreEqual(answer, _fileService.GetfolderPath() + "\\LotImages");
         }
-        public void GetFolderPathTest() // rfr????
+        public void GetFolderPath_Test() // rfr????
         {
             //Preparing  
             //Act 

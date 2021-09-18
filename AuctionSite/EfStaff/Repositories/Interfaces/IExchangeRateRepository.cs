@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.EfStaff.Repositories.Interfaces
 {
-    interface IExchangeRateRepository:IBaseRepository<ExchangeRate>
+    public interface IExchangeRateRepository:IBaseRepository<ExchangeRate>
     {
         public bool Exist(string name);
     }

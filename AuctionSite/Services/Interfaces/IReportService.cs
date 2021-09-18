@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services.Interfaces
 {
-    interface IReportService
+    public interface IReportService
     {
         public byte[] GeneratePdfReport(Lot lot, CurrencyEnum currency);
     }

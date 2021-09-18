@@ -5,15 +5,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using AuctionSite.EfStaff.Enum;
 using AuctionSite.Services.Interfaces;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 
 namespace AuctionSite.Services
 {
     public class LotService: ILotService
     {
-        private LotRepository _lotRepository { get; set; }
+        private ILotRepository _lotRepository { get; set; }
         private EmailService _emailService { get; set; }
         
-        public LotService(LotRepository lotRepository,
+        public LotService(ILotRepository lotRepository,
             EmailService emailService)
         {
             _lotRepository = lotRepository;

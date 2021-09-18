@@ -82,7 +82,6 @@ namespace AuctionSite
             //services.AddScoped<IFileService>(x => new FileService(
             // x.GetService<IWebHostEnvironment>()));
 
-
             //services.AddScoped<IUserRepository>(x => new UserRepository(x.GetService<AuctionSiteDbContext>()));
             //services.AddScoped<ITypeLotRepository>(x => new TypeLotRepository(x.GetService<AuctionSiteDbContext>()));
             //services.AddScoped<IExchangeRateRepository>(x => new ExchangeRateRepository(x.GetService<AuctionSiteDbContext>()));
@@ -124,7 +123,7 @@ namespace AuctionSite
             foreach (var iService in iServices)
             {
                 var neededClass = types.Single(x => x.GetInterfaces().Contains(iService));
-                services.AddScoped(neededClass, serviceProvider => services.Register(serviceProvider, neededClass));
+                services.AddScoped(iService, serviceProvider => services.Register(serviceProvider, neededClass));
             }
 
         }
@@ -141,11 +140,9 @@ namespace AuctionSite
             foreach (var repositoryType in repositories)
             {
                 var neededClass = a.Single(x => x.GetInterfaces().Contains(repositoryType));
-                services.NiceRegister(neededClass);
                 services.AddScoped(repositoryType, serviceProvider => services.Register(serviceProvider, neededClass));
             }
         }
-
 
         public void registerMapper(IServiceCollection services)
         {
@@ -162,7 +159,6 @@ namespace AuctionSite
             var mapper = new Mapper(mapperConfiguration);
 
             services.AddScoped<IMapper>(x => mapper);
-
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

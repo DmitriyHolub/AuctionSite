@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.Services.Interfaces
 {
-    interface IEmailService
+    public interface IEmailService
     {
         public void SendMessage(string recipient, string mail);
 

@@ -1,5 +1,6 @@
 ﻿using AuctionSite.EfStaff.Models;
 using AuctionSite.EfStaff.Repositories;
+using AuctionSite.EfStaff.Repositories.Interfaces;
 using AuctionSite.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -11,10 +12,10 @@ namespace AuctionSite.Services
 {
     public class UserService : IUserService
     {
-        private UserRepository _userRepository { get; set; }
+        private IUserRepository _userRepository { get; set; }
         private IHttpContextAccessor _httpContextAccessor { get; set; }
 
-        public UserService(UserRepository userRepository, 
+        public UserService(IUserRepository userRepository, 
             IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository;

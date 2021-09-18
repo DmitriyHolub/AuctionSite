@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSite.EfStaff.Repositories.Interfaces
 {
-    interface ILotImageRepository:IBaseRepository<LotImage>
+    public interface ILotImageRepository:IBaseRepository<LotImage>
     {
         public List<string> GetUrlImage();
 
