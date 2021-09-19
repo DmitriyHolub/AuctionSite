@@ -1,26 +1,24 @@
 ﻿@model ShowLotWrappedModel
 @using AuctionSite.Localize
 
-@*@section Head{
-    <script src ="~/js/CurrencyChange.js"></script>
-    }*@
-
 <form action="/Home/Index?currency=@Model.Currency " method="get" class="currency-block ">
     @Resource.Currency_selection;
     @Html.DropDownList("Currency", @Model.Currencies)
     <input type="submit" value="выбор валюты" />
 </form>
+<div class="number-page">
+    @for (int i = 1; i <= Model.NumberOfPages; i++)
+    {
+        <a href="/Home/Index?currency =@Model.Currency&numberPage=@i"> @i </a>
+    }
+</div>
 <div class="lot-wrap">
-
     @foreach (var item in @Model.LotsModels)
     {
         <div class="lot-block">
             <div class=" top-wrap">
                 <div class="left-block">
-                    @foreach (var img in @item.UrlImages)
-                    {
-                        <img class="lot-image" src=@img /> @*надо дорисовать кнопки оборота*@
-                    }
+                    <img class="lot-image" src=@item.UrlImages[0] />
                     <div class="choose-image">
                     </div>
                 </div>
@@ -35,7 +33,7 @@
             </div>
             <div class=" bottom-wrap">
                 <div style="color:red" class="price-block">
-                    @item.BuyoutPrice @Model.PreferCurrency.ToString();
+                    @item.BuyoutPrice @Model.PreferCurrency.ToString()
                 </div>
                 <div class="place-bet-block">
                     <div class="lot-placebet">
@@ -46,6 +44,9 @@
                     </div>
                     <div class="lot-download">
                         <a href="/Lot/DownLoadLot?lotId=@item.Id&currency=@Model.PreferCurrency">@Resource.DownLoad</a>
+                    </div>
+                    <div class="show-lot">
+                        <a href="/Lot/ShowSelectedLot?lotId=@item.Id">@Resource.Show_lot</a>
                     </div>
                 </div>
             </div>

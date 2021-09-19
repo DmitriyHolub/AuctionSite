@@ -13,7 +13,9 @@ namespace AuctionSite.Models
         [Required(
             ErrorMessageResourceType = typeof(Resource), 
             ErrorMessageResourceName = nameof(Resource.Input_Login_please))]
-        [StringLength(20, MinimumLength =3, ErrorMessage = "Login must be more than 3 letters and less than 20 letters")]
+        [StringLength(20, MinimumLength =3,
+             ErrorMessageResourceType = typeof(Resource),
+            ErrorMessageResourceName = nameof(Resource.Attribute_Login_length))]
         [UniqLogin]
         public string Login { get; set; }
 

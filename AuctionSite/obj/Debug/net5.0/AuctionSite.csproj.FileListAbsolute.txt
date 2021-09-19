@@ -190,3 +190,5 @@ C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\AuctionSite.d
 C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\ref\AuctionSite.dll
 C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\AuctionSite.pdb
 C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\AuctionSite.genruntimeconfig.cache
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\Razor\Views\Lot\ShowSelectedLot.cshtml.g.cs
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\Razor\Views\Shared\Partial.cshtml.g.cs

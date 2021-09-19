@@ -19,7 +19,6 @@
         <div class="top-header">
             <div class="logotip">
                 <img src="~/Images/logotip2.png" />
-                <p>Логотип</p>
             </div>
 
             <div class="right-heard-block">
@@ -79,7 +78,7 @@
 
                 @if (User.Identity.Name == "Admin")
                 {
-                    <li class="admin-layout-page">
+                    <li class="admin-layout-page"> 
                         <a href="/User/AdminPage">@Resource.LayOut_menu_Admin_page </a>
                     </li>
                 }

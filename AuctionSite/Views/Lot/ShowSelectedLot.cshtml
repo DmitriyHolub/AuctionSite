@@ -1,0 +1,50 @@
+﻿@model ShowSelectedLotModel
+@using AuctionSite.Localize
+@using AuctionSite.Models.Enums
+
+<div class="lot-block-show-lot">
+    <div class=" top-wrap">
+        <div class="left-block">
+            <img class="lot-selected-image" src=@Model.UrlImages />
+            <div class="choose-image">
+            @foreach (var item in Model.UrlImages)
+            {
+                <img class="show-one-lot-image" src=@item />
+            }
+        </div>
+            @*<div class="choose-image">
+                <img class="show-one-lot-image" src=@Model.UrlImage />
+            </div>
+            <div class="change-image">
+
+                <a href="/Lot/ChangeImage?lotId=@Model.Id&direction=@ImageScrollEnum.Left"></a>
+                <a href="/Lot/ChangeImage?lotId=@Model.Id&direction=@ImageScrollEnum.Right"></a>
+            </div>*@
+
+        </div>
+        <div class="right-block">
+            <div class="lot-name">
+                <h1>@Model.LotName</h1>
+            </div>
+            <div class="lot-description">
+                <p>@Model.ProductDescription</p>
+            </div>
+        </div>
+    </div>
+    <div class=" bottom-wrap">
+        <div style="color:red" class="price-block">
+            @Model.BuyoutPrice @Model.PreferCurrency.ToString()
+        </div>
+        <div class="place-bet-block">
+            <div class="lot-placebet">
+                <a href="/Lot/PlaceBet?lotId=@Model.Id">@Resource.Lot_Show_Place_a_bet</a>
+            </div>
+            <div class="lot-subscribe">
+                <a href="/Lot/Subscribe?lotId=@Model.Id">@Resource.Item_subscribe</a>
+            </div>
+            <div class="lot-download">
+                <a href="/Lot/DownLoadLot?lotId=@Model.Id&currency=@Model.PreferCurrency">@Resource.DownLoad</a>
+            </div>
+        </div>
+    </div>
+</div>

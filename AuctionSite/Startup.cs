@@ -125,7 +125,6 @@ namespace AuctionSite
                 var neededClass = types.Single(x => x.GetInterfaces().Contains(iService));
                 services.AddScoped(iService, serviceProvider => services.Register(serviceProvider, neededClass));
             }
-
         }
         private void registerIRepositories(IServiceCollection services)
         {
@@ -154,7 +153,10 @@ namespace AuctionSite
                 config => config.MapFrom(x => Math.Max(x.BuyoutPrice, x.StartPrice))).
             ForMember(nameof(ShowLotsModel.UrlImages),
                config => config.MapFrom(x => x.UrlImages.Select(a => a.Url).ToList()));
-
+            provider.CreateMap<Lot,ShowSelectedLotModel>().
+                ForMember(nameof(ShowSelectedLotModel.UrlImages), 
+                config => config.MapFrom(x=>x.UrlImages.Select(a=>a.Url).ToList()));
+           
             var mapperConfiguration = new MapperConfiguration(provider);
             var mapper = new Mapper(mapperConfiguration);
 

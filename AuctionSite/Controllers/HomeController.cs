@@ -42,8 +42,6 @@ namespace AuctionSite.Controllers
 
             var countOfActiveLots = _lotRepository.GetCountOfActiveLots();
 
-            var showLotsModels = new List<ShowLotsModel>();
-
             var currencies = Enum.GetValues(typeof(CurrencyEnum)).
                Cast<CurrencyEnum>().
                Select(x => x).
@@ -54,10 +52,10 @@ namespace AuctionSite.Controllers
             viewModel.NumberOfPages = Math.Ceiling((double)countOfActiveLots / 10);
 
             viewModel.LotsModels = lots.
-                Select(x => _mapper.Map<ShowLotsModel>(x)).
+                Select(lot => _mapper.Map<ShowLotsModel>(lot)).
                 ToList();
 
-            if (!User.Identity.IsAuthenticated)
+            if (!User.Identity.IsAuthenticated) // одинаковый код
             {
                 if (currency == null)
                 {
@@ -128,13 +126,14 @@ namespace AuctionSite.Controllers
                     break;
                 case (int)LanguageEnum.Rus:
                     CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("ru-Ru");
+                    CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("ru-Ru");
                     break;
                 default:
                     throw new Exception("Unknown currency");
             }
             return View();
         }
-        public IActionResult FinishForm(FinishFormModel viewModel)
+        public IActionResult FinishForm(FinishFormModel viewModel) // надо ли форма
         {
             return View(viewModel);
         }

@@ -13,13 +13,15 @@ namespace AuctionSite.Services
 
         public void SendMessage(string recipient, string mail)
         {
-            MailAddress from = new MailAddress("6367394@mail.ru", "Auction");
-            MailAddress to = new MailAddress(recipient);
-            MailMessage startMessage = new MailMessage(from, to);
+            var from = new MailAddress("6367394@mail.ru", "Auction");
+            var to = new MailAddress(recipient);
+            var startMessage = new MailMessage(from, to);
 
             startMessage.Subject = "Тест";
             startMessage.Body = $"{mail}";
-            SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587);
+
+            var smtp = new SmtpClient("smtp.mail.ru", 587);
+
             smtp.Credentials = new NetworkCredential("6367394@mail.ru", "11213411qq");
             smtp.EnableSsl = true;
             smtp.Send(startMessage);

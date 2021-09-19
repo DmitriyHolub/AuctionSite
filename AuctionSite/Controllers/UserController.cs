@@ -54,6 +54,7 @@ namespace AuctionSite.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
+
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
@@ -174,6 +175,7 @@ namespace AuctionSite.Controllers
         public IActionResult AdminPage(AdminPageModel adminPageModel)
         {
             var checkedLot = _lotRepository.GetById(adminPageModel.LotToCheck.Id);
+
             if (adminPageModel.CheckAdmin)
             {
                 checkedLot.CheckAdmin = true;

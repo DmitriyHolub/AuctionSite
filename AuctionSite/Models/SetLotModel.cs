@@ -13,7 +13,8 @@ namespace AuctionSite.Models
 {
     public class SetLotModel
     {
-        [Required(ErrorMessage = "Input Name of lot please.")]
+        [Required(ErrorMessageResourceType = typeof(Resource),
+            ErrorMessageResourceName =nameof(Resource.Attribures_Input_name_Lot))]      
         [StringLength(200, MinimumLength = 3, ErrorMessage = "Too big description. Make it shorter please")]
         public string LotName { get; set; }
 

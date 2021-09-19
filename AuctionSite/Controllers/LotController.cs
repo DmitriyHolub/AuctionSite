@@ -16,6 +16,8 @@ using AuctionSite.Controllers.Attributes;
 using System.Drawing;
 using AuctionSite.EfStaff.Repositories.Interfaces;
 using AuctionSite.Services.Interfaces;
+using AuctionSite.Models.Enums;
+
 
 namespace AuctionSite.Controllers
 {
@@ -111,6 +113,7 @@ namespace AuctionSite.Controllers
             var user = _userService.GetCurrentUser();
 
             var lots = new List<Lot>();
+
             switch (numberType)
             {
                 case LotTypeEnum.Equipment:
@@ -264,9 +267,48 @@ namespace AuctionSite.Controllers
             return File(pdfFile,
            "application/octet-stream", "LotPdf.pdf");
         }
-        public void ChangeImage()
+        public void ChangeImage(long lotId)
         {
             
+        }
+        public IActionResult ShowSelectedLot(long lotId, CurrencyEnum? currency,ImageScrollEnum? imageScrollEnum) // выаыывыыв
+        {
+            var lot = _lotRepository.GetById(lotId);
+
+            var user = _userService.GetCurrentUser();
+
+            var viewModel = _mapper.Map<ShowSelectedLotModel>(lot);
+
+            if (!User.Identity.IsAuthenticated) // повтор кода
+            {
+                if (currency == null)
+                {
+                    viewModel.PreferCurrency = CurrencyEnum.BYN;
+
+                    return View(viewModel);
+                }
+
+                viewModel.BuyoutPrice = Math.Round(_exchangeService.GetCurrentPrice(viewModel.BuyoutPrice, (CurrencyEnum)currency), 2);
+
+                viewModel.PreferCurrency = (CurrencyEnum)currency;
+
+                return View(viewModel);
+            }
+
+            if (currency == null) // for Authenticated user
+            {
+                viewModel.BuyoutPrice = Math.Round(_exchangeService.GetCurrentPrice(viewModel.BuyoutPrice, (CurrencyEnum)currency), 2);
+
+                viewModel.PreferCurrency = user.PreferingCurrency;
+            }
+            else
+            {
+                viewModel.BuyoutPrice = Math.Round(_exchangeService.GetCurrentPrice(viewModel.BuyoutPrice, (CurrencyEnum)currency), 2);
+
+                viewModel.PreferCurrency = (CurrencyEnum)currency;
+            }
+
+            return View(viewModel);
         }
     }
 }

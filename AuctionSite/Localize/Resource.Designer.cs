@@ -79,6 +79,24 @@ namespace AuctionSite.Localize {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input Name of lot please.
+        /// </summary>
+        public static string Attribures_Input_name_Lot {
+            get {
+                return ResourceManager.GetString("Attribures_Input_name_Lot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login must be more than 3 letters and less than 20 letters.
+        /// </summary>
+        public static string Attribute_Login_length {
+            get {
+                return ResourceManager.GetString("Attribute_Login_length", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string Common_Create {
@@ -462,6 +480,15 @@ namespace AuctionSite.Localize {
         public static string Set_lot_Mistake_Input_Name {
             get {
                 return ResourceManager.GetString("Set_lot_Mistake_Input_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show lot.
+        /// </summary>
+        public static string Show_lot {
+            get {
+                return ResourceManager.GetString("Show_lot", resourceCulture);
             }
         }
         

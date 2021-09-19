@@ -13,6 +13,10 @@ namespace AuctionSite.Controllers.Attributes
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
+            if (value == null)
+            {
+                return new ValidationResult("Enter Login");
+            }
             var _userRepository = validationContext.GetService(typeof(UserRepository)) as UserRepository;
 
             if (!_userRepository.IsNameExist(value.ToString()))

@@ -13,7 +13,7 @@ namespace AuctionSite.Services
     public class ExchangeService: IExchangeService
     {
         private IExchangeRateRepository _exchangeRateRepository { get; set; }
-        private List<ExchangeRate> allExchangedRates { get; set; }
+        public List<ExchangeRate> allExchangedRates { get; set; }
 
         public ExchangeService(IExchangeRateRepository exchangeRateRepository)
         {
@@ -25,7 +25,7 @@ namespace AuctionSite.Services
         {
             if (currency == CurrencyEnum.RUB)
             {
-                return Math.Round(price * allExchangedRates.First(x => x.TypeCurrency == currency).Rate, 2); // yt ghfdbkmyj
+                return Math.Round(price *100/allExchangedRates.First(x => x.TypeCurrency == currency).Rate, 2); // yt ghfdbkmyj
             }
 
             return Math.Round(price / allExchangedRates.First(x => x.TypeCurrency == currency).Rate, 2);
@@ -34,8 +34,9 @@ namespace AuctionSite.Services
         {
             if (currency == CurrencyEnum.RUB)
             {
-                return Math.Round(price / allExchangedRates.First(x => x.TypeCurrency == currency).Rate);
+                return Math.Round(price /100* allExchangedRates.First(x => x.TypeCurrency == currency).Rate);
             }
+
             return Math.Round(price * allExchangedRates.First(x => x.TypeCurrency == currency).Rate);
         }
     }

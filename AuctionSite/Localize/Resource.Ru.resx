@@ -123,6 +123,12 @@
   <data name="Admin_page_verification_passed" xml:space="preserve">
     <value>Проверка пройдена</value>
   </data>
+  <data name="Attribures_Input_name_Lot" xml:space="preserve">
+    <value>Введите Название Лота</value>
+  </data>
+  <data name="Attribute_Login_length" xml:space="preserve">
+    <value>Логин должен состоять более чем из 3 символов и менее чем из 20</value>
+  </data>
   <data name="Common_Create" xml:space="preserve">
     <value>Создать</value>
   </data>
@@ -251,6 +257,9 @@
   </data>
   <data name="Set_lot_Mistake_Input_Name" xml:space="preserve">
     <value>Введите имя лота пожалуйста</value>
+  </data>
+  <data name="Show_lot" xml:space="preserve">
+    <value>Смотреть лот</value>
   </data>
   <data name="Subscribe_finish" xml:space="preserve">
     <value>Спасибо. Вы подписаны на лот</value>
