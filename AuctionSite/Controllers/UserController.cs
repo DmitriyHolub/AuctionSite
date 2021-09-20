@@ -14,6 +14,8 @@ using AuctionSite.Services;
 using AuctionSite.Controllers.Attributes.AuthAttribute;
 using AuctionSite.EfStaff.Repositories.Interfaces;
 using AuctionSite.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Cryptography;
 
 namespace AuctionSite.Controllers
 {
@@ -25,13 +27,15 @@ namespace AuctionSite.Controllers
         private IMapper _mapper { get; set; }
         private IUserService _userService { get; set; }
         private IEmailService _emailService { get; set; }
+        //private readonly UserManager<User> _userManager; 
 
         public UserController(IUserRepository userRepository,
             ITypeLotRepository typeLotRepository,
             ILotRepository lotRepository,
             IMapper mapper,
             IUserService userService,
-            IEmailService emailService)
+            IEmailService emailService
+            /*UserManager<User> userManager*/) 
         {
             _userRepository = userRepository;
             _typeLotRepository = typeLotRepository;
@@ -39,6 +43,7 @@ namespace AuctionSite.Controllers
             _mapper = mapper;
             _userService = userService;
             _emailService = emailService;
+           /* _userManager = userManager*/;
         }
 
         [HttpGet]
@@ -76,7 +81,7 @@ namespace AuctionSite.Controllers
 
             var claims = new List<Claim>();
             claims.Add(new Claim("Id", user.Id.ToString()));
-            claims.Add(new Claim(ClaimTypes.Name, user.Login)); // возможно не надо
+            claims.Add(new Claim(ClaimTypes.Name, user.Login));
             claims.Add(new Claim(
                 ClaimTypes.AuthenticationMethod,
                 Startup.AuthName));
@@ -88,7 +93,7 @@ namespace AuctionSite.Controllers
 
             if (string.IsNullOrEmpty(userLogin.ReturnUrl))
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
             return Redirect(userLogin.ReturnUrl);
         }
@@ -106,7 +111,7 @@ namespace AuctionSite.Controllers
                 return View(userProfile);
             }
 
-            var user = _userService.GetCurrentUser(); // заменит или нет AutoMapper
+            var user = _userService.GetCurrentUser(); 
 
             user.Name = userProfile.Name;
             user.Surname = userProfile.SurName;
@@ -143,11 +148,29 @@ namespace AuctionSite.Controllers
 
             _userRepository.Save(user);
 
+            //var code = Guid.NewGuid();
+
+            //var callbackUrl = Url.Action(
+            //           "ConfirmEmail",
+            //           "User",
+            //           new { userId = user.Id, code = code },
+            //           protocol: HttpContext.Request.Scheme);
+
+            //var header = "Confirm Email";
+
+            //var text = $"Confirm your registration by clicking on the link <a href='{callbackUrl}'>link</a>";
+
+
+            //_emailService.ConfirmEmail(user.Email, code, callbackUrl, header,text);
+
             var textMessage = $"Все хорошо {registrationUser.Login}"; //email
 
             _emailService.SendMessage(registrationUser.Email, textMessage);
 
             return RedirectToAction("Profile", "User");
+
+            //return RedirectToAction("FinishForm", "Home",
+            //    new FinishFormModel() { FinishMessage = "To complete the registration, check your email and follow the link provided in the email" });
         }
         [OnlyAdmin]
         [HttpGet]
@@ -220,5 +243,29 @@ namespace AuctionSite.Controllers
             var isUniq = !_userRepository.Exist(login);
             return Json(isUniq);
         }
+        //public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        //{
+        //    var user = _userRepository.GetById((long.Parse(userId)));
+
+        //    if (user == null || code == null)
+        //    {
+        //        return RedirectToAction("FinishForm", "Home",
+        //        new FinishFormModel() { FinishMessage = "Error. " });
+        //    };
+
+        //    //var result = await _userManager.ConfirmEmailAsync(user, code);
+
+
+        //    if (result.Succeeded)
+        //    {
+        //        user.ConfirmEmail = true;
+        //        _userRepository.Save(user);
+
+        //        return RedirectToAction("Profile", "User");
+        //    }
+
+        //    return RedirectToAction("FinishForm", "Home",
+        //   new FinishFormModel() { FinishMessage = "Error. " });
+        //}
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AuctionSite.EfStaff.Enum;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,6 +19,8 @@ namespace AuctionSite.EfStaff.Models
         public UserTypeEnum TypeOfUSer { get; set; }
         public int Rating { get; set; }
         public CurrencyEnum PreferingCurrency { get; set; }
+        public bool ConfirmEmail { get; set; }
+        //public string CodeConfirmEmail { get; set; }
 
         public virtual List<TypeLot> FavoriteTypesOfLots { get; set; }      
         public virtual List<BankCard> UsersBankCards { get; set; }

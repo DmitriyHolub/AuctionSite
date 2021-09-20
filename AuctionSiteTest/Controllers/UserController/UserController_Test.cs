@@ -14,6 +14,7 @@ using NUnit.Framework;
 using AuctionSite.EfStaff.Models;
 using AuctionSite.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 
 namespace AuctionSiteTest.Controllers.UserController
 {
@@ -26,6 +27,7 @@ namespace AuctionSiteTest.Controllers.UserController
         Mock<IMapper> _mapper;
         Mock<IUserService> _userService;
         Mock<IEmailService> _emailService;
+        //private readonly Mock<UserManager<User>> _userManager = new Mock<UserManager<User>>();
         AuctionSite.Controllers.UserController _userController;
         [SetUp]
         public void SetUp()
@@ -36,13 +38,15 @@ namespace AuctionSiteTest.Controllers.UserController
             _userService = new Mock<IUserService>();
             _mapper = new Mock<IMapper>();
             _emailService = new Mock<IEmailService>();
+
             _userController =
                 new AuctionSite.Controllers.UserController(_userRepository.Object,
                 _typeLotRepository.Object,
                 _lotRepository.Object,
                 _mapper.Object,
                 _userService.Object,
-                _emailService.Object);
+                _emailService.Object
+               /* _userManager.Object*/);
         }
         [Test]
         public void GetModelStateAddModelErrorIfUserNull() // Недоделано !!!!!!!!!!!!!!!!!!!!!!!!!!

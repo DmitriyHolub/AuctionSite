@@ -15,10 +15,7 @@
         <div class="lot-block">
             <div class=" top-wrap">
                 <div class="left-block">
-                    @foreach (var img in @item.UrlImages)
-                    {
-                        <img class="lot-image" src=@img />
-                    }
+                        <img class="lot-image" src=@item.UrlImages[0] />
                     <div class="choose-image">
                     </div>
                 </div>

@@ -23,6 +23,7 @@ using DinkToPdf;
 using AuctionSite.EfStaff.Repositories.Interfaces;
 using AuctionSite.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 namespace AuctionSite
 {
@@ -38,7 +39,6 @@ namespace AuctionSite
         public const string AuthName = "AuctionAuth";
         public void ConfigureServices(IServiceCollection services)
         {
-            // подключить через конфиг
             var connectString = Configuration.GetValue<string>("LokalDatabaseAuctionSite");
             services.AddDbContext<AuctionSiteDbContext>(x => x.UseSqlServer(connectString));
 
@@ -51,7 +51,7 @@ namespace AuctionSite
 
                 });
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
-
+       
             services.AddControllersWithViews();
 
             registerRepositories(services);

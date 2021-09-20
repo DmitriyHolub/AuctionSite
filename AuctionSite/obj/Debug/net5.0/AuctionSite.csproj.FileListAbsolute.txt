@@ -191,4 +191,11 @@ C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\ref\AuctionSi
 C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\AuctionSite.pdb
 C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\AuctionSite.genruntimeconfig.cache
 C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\Razor\Views\Lot\ShowSelectedLot.cshtml.g.cs
-C:\Users\HP\source\repos\AuctionSite2\AuctionSite\obj\Debug\net5.0\Razor\Views\Shared\Partial.cshtml.g.cs
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\MailKit.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\MimeKit.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\HP\source\repos\AuctionSite2\AuctionSite\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll

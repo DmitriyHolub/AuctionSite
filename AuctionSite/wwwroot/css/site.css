@@ -308,4 +308,8 @@
 /*.lot-image:hover {
     transform: scale(1.2);
 }*/
+.choose-image-selected{
+    display:flex;
+    flex-direction:column;
+}
 
